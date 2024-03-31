@@ -1,14 +1,11 @@
 package org.test;
 
 import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.WebDriverRunner;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import pages.SitePage;
 
-import java.util.Collection;
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
