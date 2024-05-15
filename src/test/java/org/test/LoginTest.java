@@ -11,8 +11,6 @@ public class LoginTest extends BaseTest {
 
     Logger logger = Logger.getLogger(LoginTest.class.getName());
 
-    private final static String LOGIN = "technopol39";
-    private final static String PASSWORD = "technopolisPassword";
     private final static String ERR_MES_RUS = "Неправильно указан логин и/или пароль";
     private final static String ERR_MES_ENG = "Incorrect username and/or password";
     private UserPage user;

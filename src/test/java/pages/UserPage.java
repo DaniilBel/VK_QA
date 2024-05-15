@@ -31,4 +31,6 @@ public class UserPage extends BasePage {
         $(CONFIRMATION_OF_EXIT_BUTTON).shouldBe(visible.because("Exit button should be visible"))
                 .click();
     }
+
+
 }

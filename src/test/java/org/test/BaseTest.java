@@ -5,6 +5,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.UserPage;
 
 import java.util.logging.Logger;
 
@@ -14,6 +15,11 @@ public class BaseTest {
     private final static String URL = "https://ok.ru/";
     private static final Logger logger = Logger.getLogger(BaseTest.class.getName());
     protected static WebDriver driver;
+
+    protected final static String LOGIN = "technopol39";
+    protected final static String PASSWORD = "technopolisPassword";
+
+    protected static UserPage user;
 
     @BeforeAll
     public static void init() {
