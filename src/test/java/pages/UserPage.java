@@ -1,8 +1,11 @@
 package pages;
 
+import blocks.SideBar;
 import org.openqa.selenium.By;
+import pages.friends.FriendsPage;
 
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class UserPage extends BasePage {
@@ -31,6 +34,4 @@ public class UserPage extends BasePage {
         $(CONFIRMATION_OF_EXIT_BUTTON).shouldBe(visible.because("Exit button should be visible"))
                 .click();
     }
-
-
 }
