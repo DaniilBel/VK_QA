@@ -2,7 +2,6 @@ package pages;
 
 import blocks.SideBar;
 import org.openqa.selenium.By;
-import pages.friends.FriendsPage;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.*;

@@ -8,27 +8,31 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SideBar {
-    private final SelenideElement block = $(byId("hook_Block_SideNavigation"));
+    private static final By profileName = By.xpath("//*[@class='tico ellip']");
+    private static final By friendsButton = By.xpath("//*[@id='hook_Block_Navigation']//a[@data-l='t,userFriend']//div");
+    private static final By photoButton = By.xpath("//*[@data-l='t,userPhotos']//div[@class='tico null']");
+    private static final By groupsButton = By.xpath("//*[@data-l='t,userAltGroup']//div[@class='tico null']");
 
-    private static final By MY_PROFILE_BUTTON = byXpath(".//a[@data-l='t,userPage']");
-    private static final By HOME_BUTTON = byText("Лента");
-    private static final By FRIENDS_BUTTON = byText("Друзья");
-
-    public void clickOnHome() {
-        block.$(HOME_BUTTON).shouldBe(
-                visible.because("Нет кнопки для перехода на ленту")
-        ).click();
+    public SideBar() {
+        checkMenu();
     }
 
-    public void clickOnMyProfile() {
-        block.$(MY_PROFILE_BUTTON).shouldBe(
-                visible.because("Нет кнопки для перехода в профиль")
-        ).click();
+    public void checkMenu() {
+        $(friendsButton).shouldBe(visible.because("friends button should be visible on leftMenu"));
+        $(profileName).shouldBe(visible.because("profile name should be visible on leftMenu"));
+        $(photoButton).shouldBe(visible.because("photoButton should be visible on leftMenu"));
+        $(groupsButton).shouldBe(visible.because("groupsButton should be visible on leftMenu"));
     }
 
-    public void clickOnFriends() {
-        block.$(FRIENDS_BUTTON).shouldBe(
-                visible.because("Нет кнопки для перехода на страницу друзей")
-        ).click();
+    public By getProfileName() {
+        return profileName;
+    }
+
+    public By getPhotoButton() {
+        return photoButton;
+    }
+
+    public By getGroupsButton() {
+        return groupsButton;
     }
 }
