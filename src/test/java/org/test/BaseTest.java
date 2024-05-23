@@ -12,12 +12,14 @@ import java.util.logging.Logger;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class BaseTest {
-    private final static String URL = "https://ok.ru/";
+    private final static String URL = "https://vk.com/";
     private static final Logger logger = Logger.getLogger(BaseTest.class.getName());
     protected static WebDriver driver;
 
-    protected final static String LOGIN = "technopol39";
-    protected final static String PASSWORD = "technopolisPassword";
+//    protected final static String LOGIN = "technopol39";
+    protected final static String LOGIN = "danya.belyaev@gmail.com";
+//    protected final static String PASSWORD = "technopolisPassword";
+    protected final static String PASSWORD = "ALDA6762alda6762";
 
     protected static UserPage user;
 

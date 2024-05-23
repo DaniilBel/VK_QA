@@ -11,7 +11,7 @@ public class LoginTest extends BaseTest {
 
     Logger logger = Logger.getLogger(LoginTest.class.getName());
 
-    private final static String ERR_MES_RUS = "Неправильно указан логин и/или пароль";
+    private final static String ERR_MES_RUS = "Аккаунт не найден. Повторите попытку или зарегистрируйтесь по номеру телефона";
     private final static String ERR_MES_ENG = "Incorrect username and/or password";
     private UserPage user;
 
@@ -28,7 +28,7 @@ public class LoginTest extends BaseTest {
     public void testIncorrectLogin() {
         logger.info("Testing incorrect password");
         LoginPage loginPage = new LoginPage();
-        String errMes = loginPage.setLogin(LOGIN).setPassword("1234qwer").clickLogin()
+        String errMes = loginPage.setLogin("dan").setPassword(PASSWORD).clickLogin()
                 .getErrorMessage();
         Assertions.assertEquals(ERR_MES_RUS, errMes);
     }

@@ -6,10 +6,10 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage extends BasePage {
-    private final static By LOGIN_FIELD = By.xpath("//*[@id='field_email']");
+    private final static By LOGIN_FIELD = By.xpath("//*[@id='index_email']");
     private final static By PASSWORD_FIELD = By.xpath("//*[@id='field_password']");
-    private static final By LOGIN_BUTTON = By.xpath("//input[@class='button-pro __wide']");
-    private final static By ERROR_MESSAGE = By.xpath(".//*[@class='input-e login_error']");
+    private static final By LOGIN_BUTTON = By.xpath("//input[@class='FlatButton FlatButton--primary FlatButton--size-l FlatButton--wide VkIdForm__button VkIdForm__signInButton']");
+    private final static By ERROR_MESSAGE = By.xpath("//*[@class='vkuiTypography vkuiTypography--normalize vkuiFormItem__bottom vkuiFootnote']");
 
     public LoginPage() {
         checkPage();
@@ -17,7 +17,7 @@ public class LoginPage extends BasePage {
 
     public void checkPage() {
         $(LOGIN_FIELD).shouldBe(visible.because("Login field should be visible"));
-        $(PASSWORD_FIELD).shouldBe(visible.because("Password field should be visible"));
+        // $(PASSWORD_FIELD).shouldBe(visible.because("Password field should be visible"));
         $(LOGIN_BUTTON).shouldBe(visible.because("Login button should be visible"));
     }
 
@@ -42,7 +42,7 @@ public class LoginPage extends BasePage {
     }
 
     public UserPage login(String login, String password) {
-        setLogin(login).setPassword(password).clickLogin();
+        setLogin(login).clickLogin().setPassword(password);
         return new UserPage();
     }
 
