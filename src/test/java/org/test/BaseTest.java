@@ -33,5 +33,6 @@ public class BaseTest {
     @AfterAll
     public static void clear() {
         closeWebDriver();
+
     }
 }

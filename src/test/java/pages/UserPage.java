@@ -1,10 +1,8 @@
 package pages;
 
-import blocks.SideBar;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class UserPage extends BasePage {
@@ -19,6 +17,7 @@ public class UserPage extends BasePage {
         checkPage();
     }
 
+    @Override
     public void checkPage() {
         $(NAVIGATION_TOOLBAR).shouldBe(visible.because("NavigationToolBar should be visible on user main page"));
         $(NAVIGATION_BAR).shouldBe(visible.because("NavigationBar should be visible on user main page"));

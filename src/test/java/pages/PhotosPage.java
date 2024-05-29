@@ -1,6 +1,6 @@
 package pages;
 
-import blocks.SideBar;
+import elements.SideBar;
 import org.openqa.selenium.By;
 
 import java.io.File;
@@ -21,6 +21,7 @@ public class PhotosPage extends BasePage {
         checkPage();
     }
 
+    @Override
     public void checkPage() {
 
     }

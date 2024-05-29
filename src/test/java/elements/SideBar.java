@@ -1,10 +1,8 @@
-package blocks;
+package elements;
 
-import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class SideBar {
@@ -22,10 +20,6 @@ public class SideBar {
         $(profileName).shouldBe(visible.because("profile name should be visible on leftMenu"));
         $(photoButton).shouldBe(visible.because("photoButton should be visible on leftMenu"));
         $(groupsButton).shouldBe(visible.because("groupsButton should be visible on leftMenu"));
-    }
-
-    public By getProfileName() {
-        return profileName;
     }
 
     public By getPhotoButton() {

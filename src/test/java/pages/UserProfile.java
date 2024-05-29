@@ -15,6 +15,6 @@ public class UserProfile extends BasePage {
 
     public void check() throws Error {
         $(SETTINGS_BUTTON).shouldBe(
-                visible.because("Не отобразилась кнопка настроек"));
+                visible.because("The settings button did not appear"));
     }
 }

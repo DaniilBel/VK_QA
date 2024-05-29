@@ -9,21 +9,22 @@ public class MainPage extends BasePage {
     private static final By ACCOUNT_FIELD = By.xpath("//div[@class='tico ellip']");
     private static final By NEWS_FIELD = By.xpath("//div[@class='tico null']");
 //    private static final By HOBBIES_FIELD = By.xpath("//div[@class='nav-side_i  __with-ic __with-new-icons']");
-//    private static final By FRIENDS_FIELD = By.xpath("//div[@class='nav-side_i  __with-ic __with-new-icons']");
-//    private static final By PHOTO_FIELD = By.xpath("//div[@class='nav-side_i  __with-ic __with-new-icons']");
-//    private static final By GROUP_FIELD = By.xpath("//div[@class='nav-side_i  __with-ic __with-new-icons']");
+    private static final By FRIENDS_FIELD = By.xpath("//*[@id='hook_Block_Navigation']//a[@data-l='t,userFriend']//div");
+    private static final By PHOTO_FIELD = By.xpath("//*[@data-l='t,userPhotos']//div[@class='tico null']");
+    private static final By GROUP_FIELD = By.xpath("//*[@data-l='t,userAltGroup']//div[@class='tico null']");
 
     public MainPage() {
         checkPage();
     }
 
+    @Override
     public void checkPage() {
         $(ACCOUNT_FIELD).shouldBe(visible.because("Account field should be visible on user main page"));
         $(NEWS_FIELD).shouldBe(visible.because("Other field should be visible on user main page"));
 //        $(HOBBIES_FIELD).shouldBe(visible.because("Hobbies field should be visible on user main page"));
-//        $(FRIENDS_FIELD).shouldBe(visible.because("Friends field should be visible on user main page"));
-//        $(PHOTO_FIELD).shouldBe(visible.because("Photo field should be visible on user main page"));
-//        $(GROUP_FIELD).shouldBe(visible.because("Group field should be visible on user main page"));
+        $(FRIENDS_FIELD).shouldBe(visible.because("Friends field should be visible on user main page"));
+        $(PHOTO_FIELD).shouldBe(visible.because("Photo field should be visible on user main page"));
+        $(GROUP_FIELD).shouldBe(visible.because("Group field should be visible on user main page"));
     }
 
     public String getNickname() {

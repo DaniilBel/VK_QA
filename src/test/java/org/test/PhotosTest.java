@@ -2,15 +2,12 @@ package org.test;
 
 import org.junit.jupiter.api.*;
 import pages.LoginPage;
-import pages.MainPage;
 import pages.PhotosPage;
 
 import java.util.logging.Logger;
 
 public class PhotosTest extends BaseTest {
     private static Logger logger = Logger.getLogger(LoginTest.class.getName());
-
-    private final static String NICKNAME = "technopol39 technopol39";
 
     @BeforeAll
     public static void setUpBeforeClass() {

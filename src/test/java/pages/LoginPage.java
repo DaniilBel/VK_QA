@@ -15,6 +15,7 @@ public class LoginPage extends BasePage {
         checkPage();
     }
 
+    @Override
     public void checkPage() {
         $(LOGIN_FIELD).shouldBe(visible.because("Login field should be visible"));
         $(PASSWORD_FIELD).shouldBe(visible.because("Password field should be visible"));
