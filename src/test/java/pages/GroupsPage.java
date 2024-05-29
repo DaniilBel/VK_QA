@@ -1,5 +1,6 @@
 package pages;
 
+import elements.SideBar;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -7,6 +8,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class GroupsPage extends BasePage {
+    private final SideBar leftMenu = new SideBar();
+
     private static final String GROUP_NAME = "test";
     private static final By CREATE_GROUP_BUTTON = By.xpath("//*[contains(@class, 'groups-catalog-header_button')]");
     private static final By ACTUAL_FIELD = By.xpath("//a[contains(@aria-label,'Актуально')]");
@@ -30,6 +33,8 @@ public class GroupsPage extends BasePage {
     }
 
     public GroupsPage openGroupspage() {
+        $(leftMenu.getGroupsButton()).shouldBe(visible.because("groups button should be visible")).click();
+
         $(CREATE_GROUP_BUTTON).shouldBe(visible.because("createGroupButton button should be visible on groups page"));
         $(ACTUAL_FIELD).shouldBe(visible.because("ACTUAL_FIELD should be visible on groups page"));
         $(NEW_FIELD).shouldBe(visible.because("ACTUAL_FIELD should be visible on groups page"));
